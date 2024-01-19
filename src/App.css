@@ -106,7 +106,16 @@ nav ul li a:hover{
    height: 400px;
    border-radius: 20px;
  }
+ 
+.btnReceive input {
+  padding: 12px 16px;
+  margin-top: 20px;
+  background: #495e57;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
 
+}
 
 
  @media screen and (max-width: 768px) {
