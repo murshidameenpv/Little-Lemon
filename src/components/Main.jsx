@@ -39,7 +39,7 @@ function Main() {
           path="/booking"
           element={
             <Booking
-              availableTimes={state}
+              availableTimes={state.availableTimes}
               dispatch={dispatch}
               submitForm={submitForm}
             />
