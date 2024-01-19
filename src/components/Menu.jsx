@@ -1,5 +1,24 @@
 import menuData from '../recipes.json'
+import Swal from 'sweetalert2'
 function Menu() {
+const handleOrder = (id) => {
+ Swal.fire({
+  title: "Are you sure?",
+  icon: "warning",
+  showCancelButton: true,
+  confirmButtonColor: "#3085d6",
+  cancelButtonColor: "#d33",
+  confirmButtonText: "Yes, Order it!"
+}).then((result) => {
+  if (result.isConfirmed) {
+    Swal.fire({
+      title: "Ordered!",
+      text: "Your Order has been placed.",
+      icon: "success"
+    });
+  }
+});
+    }
   return (
       <div className="menu-container">
           <div className='menu-header'>
@@ -16,7 +35,7 @@ function Menu() {
                                <p>{item.price}</p>
                            </div>
                            <p>{item.description}</p>
-                            <button className='orderbtn'>Order Now</button>
+                            <button className='orderbtn' onClick={()=>handleOrder(item.id)} >Order Now</button>
                        </div>
           </div>
         ))}
